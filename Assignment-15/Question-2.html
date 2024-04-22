@@ -1,0 +1,39 @@
+<!-- Using DOM manipulation to toggle the theme between dark and light modes when the button is clicked -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme toggle feature for a website</title>
+    <style>
+        body {
+            padding: 25px;
+            background-color: white;
+            color: black;
+        }
+
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="text">This is Light Mode</h1>
+    <button onclick="currentThemes()" type="button">Toggle Theme</button>
+    <script>
+        const text = document.getElementById('text');
+        
+        function currentThemes() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+            if (text.innerHTML === "This is Light Mode"){
+                text.innerHTML = "This is Dark Mode";
+            } else {
+                text.innerHTML = "This is Light Mode";
+            }
+        }
+    </script>
+</body>
+</html>

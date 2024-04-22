@@ -1,0 +1,28 @@
+<!-- Image toggling using JS DOM -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle The Image</title>
+</head> 
+<body>
+    <h1 id="text">Your Image is visible.</h1>
+    <button onclick="toggleImage()" type="button">Toggle Image</button>
+    <img id="image" src="web-dev-poster.png" alt="" srcset="">
+    <script>
+        const text = document.getElementById('text');
+
+        function toggleImage() {
+            if (text.innerHTML === "Your Image is visible."){
+                text.innerHTML = "Your Image is hidden.";
+                document.getElementById("image").style.visibility = "hidden";
+            } else {
+                text.innerHTML = "Your Image is visible.";
+                document.getElementById("image").style.visibility = "visible";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+ <!-- Displaying the preview of the uploaded image selected by the user using JavaScript DOM manipulation-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>User Profile Picture</title>
+</head>
+<body>
+    <h1>Update Profile Picture</h1>
+    <input type="file" id="upload-input" accept="image/*">
+    <h3>Your Profile Picture</h3>
+    <img id="image" src="#" alt="No Profile Picture" srcset="">
+
+    <script>
+        const input = document.getElementById('upload-input');
+        
+        const previewPhoto = () => {
+            const file = input.files;
+            if (file){
+                const fileReader = new FileReader(); //An object is created which enables us to read the files stored on the user's machine that has been uploaded by the user
+                const preview = document.getElementById('image');
+
+                fileReader.onload = event => {
+                    preview.setAttribute('src', event.target.result); //event.target.result will contain the loadable URL. 
+                    //Can also pass a second argument inside the setAttribute method on the desired object 
+                }
+                fileReader.readAsDataURL(file[0]);
+            }
+        }
+
+        input.addEventListener('change', previewPhoto); //change event will fire as soon as the user will select a new photo and give a call to the functional expression previewPhoto 
+    </script>
+
+</body>
+</html>

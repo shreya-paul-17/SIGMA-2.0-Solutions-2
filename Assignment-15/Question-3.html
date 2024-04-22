@@ -1,0 +1,51 @@
+<!-- A simple web counter that displays 2 buttons: increments by one in "+" button and decrements by one in "-" button. However it displays a message if goes below 0 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A simple web counter</title>
+    <style>
+        .counter-container{
+            display: flex;
+            justify-content: space-between;
+            width: 120px;
+        }
+
+        button{
+            width: 30px;
+            height: 30px;
+            margin-top: 26px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Counter</h1>
+    <div class="counter-container">
+        <button onclick="incrementCount()" type="button">+</button>
+        <h1 id="count">0</h1>
+        <button onclick="decrementCount()" type="button">-</button>
+    </div>
+    <script>
+        //Initializing a variable name data
+        let data = 0;
+
+        //Creation of increment function
+        function incrementCount() {
+            data = data + 1;
+            document.getElementById("count").innerText = data;
+        }
+
+        //Creation of decrement function
+        function decrementCount() {
+            if (data>0) {
+                data = data - 1;
+                document.getElementById("count").innerText = data;
+            } else {
+                alert("Counter is going beyond 0")
+            }
+        }
+    </script>
+</body>
+</html>
