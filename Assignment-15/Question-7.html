@@ -1,0 +1,42 @@
+<!-- Creating an input field which filters the result automatically as the user searches from the list of items -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter the Results</title>
+  </head>
+  <body>
+    <input type="text" id="filterInput" placeholder="Search for items" />
+    <h3>Results:</h3>
+    <ul id="itemList">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Tailwind CSS</li>
+      <li>GitHub</li>
+      <li>JavaScript</li>
+    </ul>
+
+    <script>
+      const filterInput = document.getElementById("filterInput"); //Getting the input entered by user
+      const itemList = document
+        .getElementById("itemList")
+        .getElementsByTagName("li");
+
+      filterInput.addEventListener("input", function () {
+        const filterValue = filterInput.value.toLowerCase(); //Converting it into lowercase
+
+            //Loop over the list items (array elements) in the item list
+            for (let i = 0; i < itemList.length; i++) {
+              const itemText = itemList[i].innerText.toLowerCase();
+              if (itemText.includes(filterValue)) {
+                itemList[i].style.display = "block"; //If present, then it will display
+              } else {
+                itemList[i].style.display = "none"; //Else, it won't display
+              }
+            }
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!-- A simple webpage having 2 buttons: "Login" button which will store the user's authentication status in local storage and "Logout" button will remove the status from the storage. Aditionally it should display a message indicating whether user has logged in or not. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A simple webpage</title>
+</head>
+<body>
+    <button onclick="login()" type="button">Login</button>
+    <button onclick="logout()" type="button">Logout</button>
+    <h1 id="loginStatus"></h1>
+    <script>
+       //Login function
+       function login() {
+        localStorage.setItem("auth", true) //Storing the data in local storage
+        window.location.reload()
+       } 
+
+       //Logout function
+       function logout() {
+        localStorage.removeItem("auth", true) //Removing the data from the local storage
+        window.location.reload()
+       }
+
+       const message = document.getElementById('loginStatus') //Extracting the heading
+       const authStatus = localStorage.getItem("auth") //Retrieving the data from the local Storage
+
+       if(authStatus == "true") {
+        message.innerText = "User is logged in"
+       } else {
+        message.innerText = "User Has Not logged In"
+       }
+    </script>
+</body>
+</html>

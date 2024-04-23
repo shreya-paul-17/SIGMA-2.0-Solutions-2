@@ -1,0 +1,56 @@
+<!-- A webpage which will display the time in hours, minutes and seconds format in center of the screen and the background color of the webpage will change according to the time displayed  -->
+
+<!--  Example: If the time is 12:10:50 the background color of the webpage will have the hex code “#121050” -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background color changing webpage</title>
+    <style>
+        body{
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .clock{
+            border: 2px solid #fff;
+            border-radius: 5px;
+            padding: 20px 50px 20px 50px;
+            font-size: 35px;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <span id="hours">00</span> :
+        <span id="minutes">00</span> :
+        <span id="seconds">00</span>
+    </div>
+    <script>
+        function colorChanger() {
+            const currentTime = new Date(); //Creating an object
+
+            //First getting the hours, minutes and seconds then creating a string reperesentation of the object. After that using padStart() for filling 0's at the start in case it is a single-digit number
+            const hours = currentTime.getHours().toString().padStart(2,"0")
+            const minutes = currentTime.getMinutes().toString().padStart(2,"0")
+            const seconds = currentTime.getSeconds().toString().padStart(2,"0")
+            
+            const hexcode = `#${hours}${minutes}${seconds}` //Extracting the hexcode with the help of hours, minutes and seconds
+
+            //Getting the elements one by one through their Id and returning the text content of the element excluding spaces, CSS hidden text and tags(innerText)
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+
+            document.body.style.backgroundColor = hexcode; //Changing the background color of the webpage according to the displayed time on the screen
+        }
+        setInterval(colorChanger,1000)
+    </script>
+</body>
+</html>

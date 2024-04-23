@@ -1,0 +1,42 @@
+ <!-- Creating a heading element and a dropdown element using JS DOM. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Dropdown List</title>
+   <style>
+        body{
+            display: flex;
+        }
+
+        div{
+            margin-right: 10px;
+            font-weight: bold;
+        }
+   </style>
+</head>
+<body>
+    <div id="div-content">Which is your favorite Programming Language:</div>
+    <script>
+        var parent = document.body;
+
+        //Create array of options
+        var array = ["JavaScript", "Java", "Python", "C++"];
+
+        //Create and append the select list
+        var selectList = document.createElement("select");
+        selectList.id = "mySelect";
+        parent.appendChild(selectList);
+
+        //Create and append the options
+        for(var i=0; i<array.length; i++) {
+            var option = document.createElement("option");
+            option.value = array[i];
+            option.text = array[i];
+            selectList.appendChild(option);
+        }
+    </script>
+</body>
+</html>

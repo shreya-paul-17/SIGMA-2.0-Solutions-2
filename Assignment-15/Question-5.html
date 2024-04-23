@@ -6,11 +6,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toggle The Image</title>
+    <style>
+        div{
+            display: grid;
+        }
+
+        button{
+            width: 100px;
+            margin-bottom: 15px;
+            border: 1px solid #000000;
+            border-radius: 2px;
+        }
+    </style>
 </head> 
 <body>
     <h1 id="text">Your Image is visible.</h1>
-    <button onclick="toggleImage()" type="button">Toggle Image</button>
-    <img id="image" src="web-dev-poster.png" alt="" srcset="">
+    <div>
+        <button onclick="toggleImage()" type="button">Toggle Image</button>
+        <img id="image" src="web-dev-poster.png" alt="" srcset="">
+    </div>
     <script>
         const text = document.getElementById('text');
 
