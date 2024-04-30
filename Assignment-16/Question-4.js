@@ -1,4 +1,4 @@
-// Filtering and capitalizing books published after 2010 with author names
+// Filtering and capitalizing books published on and after 2010 with author names
 
 const bookList = [
     {
@@ -33,9 +33,15 @@ const bookList = [
     }
 ];
 
-const filterBooks = (bookList) => {
-   
-    let result = bookList.filter((book) => book.year>2010)
-    console.log(result);
-}
-filterBooks()
+const filteredBooks = bookList.filter((books) => {
+    return books.year >= 2010;
+})
+
+const result = filteredBooks.map((books) => {
+    return {
+        ...books,
+        author: books.author.toUpperCase(),
+    };
+});
+
+console.log(result);
