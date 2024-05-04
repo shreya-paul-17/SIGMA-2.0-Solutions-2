@@ -1,4 +1,4 @@
-
+// An inventory system to manage products in JS using prototypes.
 
 function Product(name, category, price, stock) {
     this.name = name;
