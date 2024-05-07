@@ -1,0 +1,28 @@
+4. Explain 5 challenges of file-based storage system which was tackled by DBMS.
+
+Ans: File-based storage systems, prevalent before the advent of modern Database Management Systems (DBMS), had several limitations that made managing data cumbersome and inefficient. Here are five key challenges of file-based systems that DBMS technology effectively addressed:
+
+1. Data Redundancy and Inconsistency:
+    Challenge: In a file-based system, the same data might be duplicated across multiple files maintained by different departments of an organization. This redundancy could lead to data inconsistency, where changes made in one file might not be reflected in another.
+
+    DBMS Solution: DBMSs utilize a centralized database that significantly reduces redundancy by ensuring data is stored only once. With normalization techniques, a DBMS can minimize duplication and enforce data consistency across all users and applications.
+
+2. Data Isolation:
+    Challenge: Data stored in different files and formats often made it difficult to access needed data quickly and efficiently. For example, generating a report that required data from multiple files could be a cumbersome and error-prone process.
+
+    DBMS Solution: DBMS provides a unified view of the entire data in the organization through an integrated database. Users can query multiple aspects of data using a single query language like SQL, making data access simpler and faster.
+
+3. Data Integrity:
+    Challenge: Ensuring the accuracy and reliability of data across multiple files without any centralized control mechanisms was challenging. Lack of integrity constraints meant that data could easily become corrupt or invalid.
+
+    DBMS Solution: DBMSs enforce data integrity through integrity constraints such as primary keys, foreign keys, unique constraints, and checks. These constraints ensure that the data entered into the database is accurate and consistent, automatically rejecting invalid data.
+
+4. Atomicity and Concurrent Access:
+    Challenge: File-based systems lacked mechanisms to handle situations where multiple users attempted to update the same data simultaneously, leading to potential data conflicts or corruption. Also, they did not support atomic transactions (where either all operations succeed or none).
+
+    DBMS Solution: Modern DBMSs provide sophisticated concurrency control mechanisms and transaction management. These ensure that database transactions are executed in a safe, consistent manner while maintaining database integrity, even with concurrent user access.
+
+5. Security:
+    Challenge: Implementing security measures in file-based systems was complex and often inadequate. Managing access control for each file separately, without any centralized security policies, exposed data to unauthorized access and potential breaches.
+    
+    DBMS Solution: DBMSs offer robust security features, including user authentication, access controls, and encryption. Administrators can define security rules and roles that determine how data is accessed and by whom, enhancing data privacy and security across the organization.

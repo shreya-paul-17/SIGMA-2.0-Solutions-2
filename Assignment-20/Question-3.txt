@@ -1,0 +1,17 @@
+3. What is DBMS ? What was the need for DBMS ?
+
+Ans: A Database Management System (DBMS) is a software system designed to store, retrieve, define, and manage databases, which are structured collections of data. It serves as an interface between the end users and the databases, facilitating the process of defining, constructing, manipulating, and sharing databases among various users and applications. DBMS software ensures the integrity, consistency, and security of data while managing updates and queries in a multi-user environment.
+
+The DBMS supports various functions that allow multiple users to interact with the database simultaneously without affecting the integrity of the data. It also provides tools for ensuring data consistency, security, backup, and recovery.
+
+Need for DBMS:
+The development and evolution of DBMS were driven by the need to overcome challenges associated with file-based storage systems. Here are some key reasons why DBMS became essential:
+
+1. Data Redundancy and Inconsistency: Prior to DBMS, data redundancy was common, leading to inconsistencies across applications. DBMS helps in normalizing data and managing it centrally to avoid redundancy and inconsistency.
+2. Data Integration: DBMS provides a unified structure for all the data of an organization, making it easier to generate reports and insights from across multiple units.
+3. Data Access: DBMS enhances the retrieval of data compared to file-based systems by using more complex and efficient querying capabilities. This includes support for SQL in relational DBMS, which is a powerful language for querying and managing data.
+4. Simultaneous Access: DBMSs are designed to handle multiple users accessing the data at the same time, maintaining data integrity through transactions and concurrency control mechanisms.
+5. Security: DBMS ensures data security through authorization and access controls, allowing only authorized users to access or manipulate the data based on their roles.
+6. Backup and Recovery: DBMSs provide tools for automatic backups and recovery mechanisms, ensuring data can be recovered after physical or logical errors, such as system crashes or accidental deletions.
+7. Data Consistency: DBMS enforces rules to maintain data consistency across applications. This includes maintaining data accuracy and reliability through integrity constraints.
+8. Scalability and Performance: DBMSs are designed to handle large volumes of data and are optimized for performance, which is crucial for large enterprises.

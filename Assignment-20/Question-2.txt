@@ -1,0 +1,16 @@
+2. Write a short note on File base storage system. Explain the major challenges of a File-based storage system.
+
+Ans: File-Based Storage System:
+
+A file-based storage system is one of the earliest forms of data storage systems where data is stored in files on the filesystem. Each file holds the records in a specific format, and each record in the file can be a set of fields. In a file-based system, the structure of the data files is defined and managed by the applications that use them. For example, a payroll application might have separate files for employee data, payroll details, and tax computations.
+    These systems were common before the widespread adoption of databases and are still used in some contexts due to their simplicity and direct control over data storage and retrieval processes.
+
+Major Challenges of a File-Based Storage System:
+
+1. Data Redundancy and Inconsistency: In file-based systems, the same piece of data may be duplicated in multiple files, leading to data redundancy. This duplication often results in inconsistencies when one instance of the data is updated but others are not. Managing data integrity becomes a significant challenge.
+2. Data Dependency: The structure of data files is defined in the application code, which means that any changes to the data structure require changes to the application logic. This tight coupling between data and application makes the system inflexible and hard to adapt or scale.
+3. Limited Data Sharing: File-based systems generally do not support sophisticated mechanisms for concurrent data access by multiple users or applications. This limitation can restrict data sharing and collaboration, which are essential in multi-user environments.
+4. Scalability Issues: As the volume of data grows, file-based systems often struggle with performance issues. They are not optimized for handling large datasets or complex queries that span multiple data files, making them less efficient as the system scales up.
+5. Security Concerns: Implementing security in file-based systems can be cumbersome and less robust compared to database systems. Security features like access control at the record level or auditing are generally not available, leading to potential risks in data confidentiality and integrity.
+6. Lack of Atomic Transactions: File-based systems usually do not support atomic transactions (where a series of data operations either all succeed or all fail). This limitation can lead to data inconsistencies, especially in environments where multiple operations on data files need to be coordinated.
+7. Backup and Recovery: Comprehensive tools for backup and recovery are often lacking in file-based systems, making it challenging to recover data after a system failure or corruption. This aspect is crucial for business continuity but typically requires additional manual setup and maintenance in file-based environments.
