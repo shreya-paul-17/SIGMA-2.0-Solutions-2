@@ -28,3 +28,61 @@ fs.unlinkSync("nodejs_architecture.txt", (err) => {
     console.log("File Deleted SuccessFully");
   }
 });
+
+// 6. Displaying OS name and OS release version to the console
+const os = require('os');
+console.log("Operating system name:", os.type());
+console.log("OS release : ", os.release());
+
+// 7. Utilizing the 'HTTP' module to create an HTTP server, set the port, appropriate content type, and send the message as a response to the client's request, allowing it to display on the browser
+const http = require('http');
+const server = http.createServer((req, res) => {
+  if (req.url == "/") {
+    res.end("I am happy to learn Full Stack Web Development from PW Skills");
+  } else {
+    res.end();
+  }
+});
+server.listen (8000, "127.0.0.1", () =>{
+  console.log("Listening to port number 8000")
+});
+
+// 8. Simulating a subsription feature similar to YouTube
+const eventEmitter = require("events");
+const event = new eventEmitter();
+
+event.on("subscribe", () => {
+  console.log("Thanks for Subscribing to College Wallah");
+});
+event.emit("subscribe", "College Wallah");
+
+// 9. Creating an event handler and later on removing it to observe what happens after that
+const eventEmitter = require("events");
+const event1 = new eventEmitter();
+
+const subscribeMessage = (channelName) => {
+  console.log(`Thanks For Subscribing to ${channelName}`);
+};
+
+console.log("Calling event listener before removing the event");
+event1.addListener("subscribe", subscribeMessage);
+event1.emit("subscribe", "College Wallah");
+
+console.log("Calling event listener after removing the event");
+event1.removeListener("subscribe", subscribeMessage);
+event1.emit("subscribe", "College Wallah");
+
+// 10. Maximum no. of listeners allowed for event handlers
+const eventEmitter = require("events");
+const event2 = new eventEmitter();
+
+const subscribeMessages = (channelName) => {
+  console.log(`Thanks For Subscribing to ${channelName}`);
+};
+
+event2.addListener("subscribe", subscribeMessages);
+event2.emit("subscribe", "College Wallah");
+
+console.log(`The default maximum number of event listeners are: ${event2.getMaxListeners()}`);
+event2.setMaxListeners(5);
+console.log(`The updated maximum number of event listeners are: ${event2.getMaxListeners()}`);
